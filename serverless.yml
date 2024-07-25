@@ -1,0 +1,22 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: djiteam
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: serverless-dji
+# serverless.yml
+
+ custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+service: numpy-test
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  numpy:
+    handler: handler.main
+
+plugins:
+  - serverless-python-requirements
